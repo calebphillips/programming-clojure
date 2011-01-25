@@ -73,7 +73,7 @@
   (includes? body head))
 
 (defn hit-the-wall? [{ [head & _] :body}]
-      (or (> (head 0) width) (or (= (head 0) -1) (= (head 1) -1))))
+  (or (> (head 0) width) (> (head 1) height) (= (head 0) -1) (= (head 1) -1)))
 
 (defn lose? [snake] (or (head-overlaps-body? snake) (hit-the-wall? snake)))
 ; END: lose?
