@@ -72,7 +72,10 @@
 (defn head-overlaps-body? [{[head & body] :body}]
   (includes? body head))
 
-(def lose? head-overlaps-body?)
+(defn hit-the-wall? [{ [head & _] :body}]
+      (= (head 0) -1))
+
+(defn lose? [snake] (or (head-overlaps-body? snake) (hit-the-wall? snake)))
 ; END: lose?
 
 ; START: eats?
