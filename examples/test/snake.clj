@@ -38,7 +38,8 @@
       (is (not (lose? (-> snake grow grow))))
       (is (lose? (-> snake (turn [1 0]) grow (turn [-1 0]) grow)))
       (is (lose? (-> snake (turn [-1 0]) move move)) "Running into the left wall")
-      (is (lose? (-> snake (turn [0 -1]) move move)) "Running into the top wall")))
+      (is (lose? (-> snake (turn [0 -1]) move move)) "Running into the top wall")
+      (is (lose? (-> snake move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move move )) "Running into the right wall")))
 
   (deftest test-eats
     (let [eat-me {:location (first (:body snake))}
