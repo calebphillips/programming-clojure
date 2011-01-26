@@ -41,7 +41,7 @@
       (is (lose? (-> snake (turn [0 -1]) move move)) "Running into the top wall")
       (is (lose? (first (drop 75 (iterate move snake)))) "Running into the right wall")
       (let [turned-snake (turn snake [0 1])] 
-        (is (lose? (do (first (drop 50 (iterate move turned-snake))))) "Running into the bottom wall"))))
+        (is (lose? (first (drop 50 (iterate move turned-snake)))) "Running into the bottom wall"))))
 
   (deftest test-eats
     (let [eat-me {:location (first (:body snake))}
